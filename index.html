@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Qibla Finder & Prayer Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-deep:   #0d2b1f;
+      --green-mid:    #1a4a32;
+      --green-light:  #2d6b48;
+      --gold:         #c9a84c;
+      --gold-light:   #e8c87a;
+      --cream:        #f7f3ec;
+      --cream-dark:   #ede8df;
+      --text-dark:    #1a1a18;
+      --text-mid:     #3d3d38;
+      --text-light:   #6b6b62;
+      --white:        #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--green-deep);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 70% at 80% 30%, rgba(45,107,72,0.3) 0%, transparent 70%);
+    }
+
+    .header-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+      background-size: 20px 20px;
+    }
+
+    .header-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px;
+      padding: 8px 20px;
+      margin-bottom: 28px;
+    }
+
+    .app-badge .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .app-badge span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .header-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+
+    .header-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto;
+    }
+
+    /* ── INTRO BANNER ── */
+    .intro-banner {
+      background: var(--green-mid);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .intro-banner p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .intro-banner strong { color: var(--gold-light); font-weight: 500; }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .section-number {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3.5vw, 28px);
+      font-weight: 600;
+      color: var(--green-deep);
+      line-height: 1.2;
+    }
+
+    .section p {
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .card-green {
+      background: var(--green-deep);
+      border-color: var(--green-mid);
+    }
+
+    .card-green p, .card-green li {
+      color: rgba(255,255,255,0.75) !important;
+    }
+
+    .card-green strong { color: var(--gold-light) !important; }
+
+    /* ── COLLECT LIST ── */
+    .collect-list { list-style: none; }
+
+    .collect-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      color: var(--text-mid);
+      font-size: 15.5px;
+    }
+
+    .collect-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .collect-list li:first-child { padding-top: 0; }
+
+    .collect-list .icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .collect-list strong {
+      display: block;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    /* ── NOT COLLECT LIST ── */
+    .not-collect-list { list-style: none; }
+
+    .not-collect-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+    }
+
+    .not-collect-list li::before {
+      content: '✕';
+      color: #e87070;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ── PERMISSIONS TABLE ── */
+    .permissions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+
+    .permissions-table thead tr {
+      background: var(--green-deep);
+      color: var(--gold-light);
+    }
+
+    .permissions-table th {
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .permissions-table th:first-child { border-radius: 12px 0 0 0; }
+    .permissions-table th:last-child  { border-radius: 0 12px 0 0; }
+
+    .permissions-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--cream-dark);
+      color: var(--text-mid);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .permissions-table tr:last-child td { border-bottom: none; }
+    .permissions-table tr:nth-child(even) td { background: rgba(247,243,236,0.5); }
+
+    .permissions-table td:first-child {
+      font-weight: 500;
+      color: var(--green-deep);
+      white-space: nowrap;
+    }
+
+    .perm-icon {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    /* ── THIRD PARTY LIST ── */
+    .third-party-list { list-style: none; }
+
+    .third-party-item {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .third-party-item .tp-badge {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--green-mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .third-party-item p {
+      font-size: 14.5px;
+      color: var(--text-mid);
+      margin: 0 !important;
+    }
+
+    .third-party-item strong {
+      display: block;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .third-party-item a {
+      color: var(--green-light);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .third-party-item a:hover { text-decoration: underline; }
+
+    /* ── RIGHTS LIST ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 560px) { .rights-grid { grid-template-columns: 1fr; } }
+
+    .right-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-left: 3px solid var(--green-light);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .right-card strong {
+      display: block;
+      color: var(--green-deep);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .right-card p {
+      font-size: 13.5px !important;
+      color: var(--text-light) !important;
+      margin: 0 !important;
+      line-height: 1.5;
+    }
+
+    /* ── FUTURE ADS NOTICE ── */
+    .notice-box {
+      background: linear-gradient(135deg, #1a4a32 0%, #0d2b1f 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .notice-box::before {
+      content: '⚡';
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      font-size: 32px;
+      opacity: 0.15;
+    }
+
+    .notice-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .notice-box p {
+      color: rgba(255,255,255,0.72) !important;
+      font-size: 14.5px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .notice-box p:last-child { margin-bottom: 0 !important; }
+
+    /* ── CONTACT BOX ── */
+    .contact-box {
+      background: var(--green-deep);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .contact-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--white);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.6);
+      font-size: 15px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--green-deep);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-link:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-deep);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+    }
+
+    footer strong { color: rgba(255,255,255,0.6); }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 56px;
+    }
+
+    .toc h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--green-deep);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 560px) { .toc ol { grid-template-columns: 1fr; } }
+
+    .toc li { color: var(--text-light); font-size: 14px; }
+
+    .toc a {
+      color: var(--green-light);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── HIGHLIGHT ── */
+    .highlight { color: var(--green-deep); font-weight: 500; }
+
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--cream-dark);
+      margin: 48px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-pattern"></div>
+  <div class="header-content">
+    <div class="app-badge">
+      <span class="dot"></span>
+      <span>Veltrix · Official Document</span>
+    </div>
+    <h1>Privacy Policy<br><em>Qibla Finder & Prayer Companion</em></h1>
+    <div class="header-divider"></div>
+    <p class="header-meta">Last Updated: April 26, 2026 &nbsp;·&nbsp; Effective Immediately</p>
+  </div>
+</header>
+
+<!-- INTRO BANNER -->
+<div class="intro-banner">
+  <p>
+    This Privacy Policy describes how <strong>Qibla Finder & Prayer Companion</strong> collects, uses, and protects your information. By using our app, you agree to the practices described below.
+  </p>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#not-collect">What We Do NOT Collect</a></li>
+      <li><a href="#how-use">How We Use Your Information</a></li>
+      <li><a href="#permissions">Device Permissions</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#storage">Data Storage & Offline Use</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#gdpr">Your Rights (GDPR)</a></li>
+      <li><a href="#ccpa">California Rights (CCPA)</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. INFORMATION WE COLLECT -->
+  <div class="section" id="collect">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Information We Collect</h2>
+    </div>
+    <div class="card">
+      <ul class="collect-list">
+        <li>
+          <div class="icon">📍</div>
+          <div>
+            <strong>Precise Location (GPS)</strong>
+            Your exact geographic location via device GPS to calculate accurate prayer times, Qibla direction, and nearby mosques. Location is only accessed while the app is in use and is never transmitted to our servers or stored externally.
+          </div>
+        </li>
+        <li>
+          <div class="icon">🧭</div>
+          <div>
+            <strong>Device Sensors (Compass & Accelerometer)</strong>
+            We access your device's magnetometer (compass) and accelerometer solely to determine your device orientation and show the correct Qibla direction. This sensor data is processed entirely on your device and is never collected, stored, or transmitted to any server.
+          </div>
+        </li>
+        <li>
+          <div class="icon">🔔</div>
+          <div>
+            <strong>Notification Preferences</strong>
+            We store your prayer notification settings — which prayers to notify for and your preferred Adhan sound — locally on your device only. This data never leaves your device.
+          </div>
+        </li>
+        <li>
+          <div class="icon">📿</div>
+          <div>
+            <strong>Prayer & Worship Data</strong>
+            Information you generate such as Tasbih counts, prayer completion logs, and daily goals are stored exclusively on your device using local storage. We have no access to this data.
+          </div>
+        </li>
+        <li>
+          <div class="icon">⚙️</div>
+          <div>
+            <strong>App Preferences</strong>
+            Settings such as calculation method, Madhab preference, theme selection, and cached location are stored locally on your device only. They are never sent to external servers.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. NOT COLLECT -->
+  <div class="section" id="not-collect">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Information We Do NOT Collect</h2>
+    </div>
+    <div class="card card-green">
+      <ul class="not-collect-list">
+        <li>We do not require account creation or collect your name, email, or any personal identifiers</li>
+        <li>We do not transmit your GPS coordinates to our own servers</li>
+        <li>We do not record or store your compass or sensor readings</li>
+        <li>We do not track your prayer habits or worship history on any external server</li>
+        <li>We do not sell your personal information to any third party</li>
+        <li>We do <strong>not currently</strong> display advertisements. When advertising is introduced in a future version, this policy will be updated and users will be notified. Any advertising will be served through Google AdMob in compliance with applicable privacy laws.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. HOW WE USE -->
+  <div class="section" id="how-use">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>How We Use Your Information</h2>
+    </div>
+    <p>We use the information we collect solely to provide the core features of the app:</p>
+    <div class="card">
+      <ul class="collect-list">
+        <li>
+          <div class="icon">🕌</div>
+          <div>Calculate accurate daily prayer times based on your GPS location using the open-source adhan.js library</div>
+        </li>
+        <li>
+          <div class="icon">🧭</div>
+          <div>Determine the precise Qibla direction toward the Kaaba in Makkah using your GPS and compass sensor</div>
+        </li>
+        <li>
+          <div class="icon">📍</div>
+          <div>Display nearby mosques using the publicly available OpenStreetMap Overpass API</div>
+        </li>
+        <li>
+          <div class="icon">🔔</div>
+          <div>Schedule and deliver local Adhan notifications at prayer times on your device</div>
+        </li>
+        <li>
+          <div class="icon">💾</div>
+          <div>Save your personal preferences between app sessions using local device storage</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. PERMISSIONS -->
+  <div class="section" id="permissions">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Device Permissions</h2>
+    </div>
+    <p>Our app requests the following permissions. You may revoke any permission at any time through your device settings.</p>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="permissions-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why We Need It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="perm-icon">📍</span>Precise Location (GPS)</td>
+            <td>To calculate prayer times, Qibla direction, and find mosques near your exact position</td>
+          </tr>
+          <tr>
+            <td><span class="perm-icon">🧭</span>Compass / Motion Sensors</td>
+            <td>To detect device orientation and display the correct Qibla direction</td>
+          </tr>
+          <tr>
+            <td><span class="perm-icon">🔔</span>Notifications</td>
+            <td>To deliver Adhan alerts at prayer times as scheduled by you</td>
+          </tr>
+          <tr>
+            <td><span class="perm-icon">🌐</span>Internet Access</td>
+            <td>To fetch nearby mosque data from OpenStreetMap and perform reverse geocoding</td>
+          </tr>
+          <tr>
+            <td><span class="perm-icon">📳</span>Vibration</td>
+            <td>To provide haptic feedback on the Tasbih counter and when facing the Qibla direction</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 14px; font-size: 14px; color: var(--text-light);">
+      Revoking location permission will cause prayer times to fall back to your last known cached location. Revoking notification permission will disable Adhan alerts.
+    </p>
+  </div>
+
+  <!-- 5. THIRD PARTY -->
+  <div class="section" id="third-party">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Our app interacts with the following third-party services. No advertising or analytics SDKs are included in the current version.</p>
+    <ul class="third-party-list">
+      <li class="third-party-item">
+        <div class="tp-badge">Maps</div>
+        <div>
+          <strong>OpenStreetMap Overpass API</strong>
+          <p>Used to find nearby mosques based on your location. Your approximate coordinates are sent to retrieve mosque data. <a href="https://openstreetmap.org/privacy" target="_blank">OpenStreetMap Privacy Policy →</a></p>
+        </div>
+      </li>
+      <li class="third-party-item">
+        <div class="tp-badge">Geocode</div>
+        <div>
+          <strong>Nominatim (OpenStreetMap)</strong>
+          <p>Used to convert your GPS coordinates into a readable city name. Only coordinates are sent — no personal identifiers. Results are cached on your device to minimize requests. <a href="https://nominatim.org/privacy.html" target="_blank">Nominatim Privacy Policy →</a></p>
+        </div>
+      </li>
+      <li class="third-party-item">
+        <div class="tp-badge">On-Device</div>
+        <div>
+          <strong>adhan.js (Open Source Library)</strong>
+          <p>An open-source JavaScript library used entirely on your device to calculate prayer times and Qibla bearing. No data is transmitted to any server.</p>
+        </div>
+      </li>
+      <li class="third-party-item">
+        <div class="tp-badge">Future</div>
+        <div>
+          <strong>Google AdMob (Planned — Not Yet Active)</strong>
+          <p>We plan to use Google AdMob to display advertisements in a future version of the app. When enabled, AdMob may collect your Advertising ID, IP address, and general location to serve relevant ads. Users will be notified before this is activated. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 6. STORAGE -->
+  <div class="section" id="storage">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Data Storage & Offline Use</h2>
+    </div>
+    <div class="card">
+      <ul class="collect-list">
+        <li>
+          <div class="icon">📱</div>
+          <div><strong>Local Only</strong>All core app data is stored locally on your device. We do not maintain servers or databases containing your personal information.</div>
+        </li>
+        <li>
+          <div class="icon">✈️</div>
+          <div><strong>Works Offline</strong>Prayer times are cached in local storage and remain accessible without an internet connection. Your Tasbih history, prayer log, and settings are always stored on-device only.</div>
+        </li>
+        <li>
+          <div class="icon">🕌</div>
+          <div><strong>Mosque Cache</strong>Mosque data is cached for 24 hours to reduce API requests and enable offline access to recently loaded results.</div>
+        </li>
+        <li>
+          <div class="icon">🗑️</div>
+          <div><strong>Uninstall</strong>When you uninstall the app, all locally stored data is permanently deleted from your device.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7. RETENTION -->
+  <div class="section" id="retention">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>Data Retention</h2>
+    </div>
+    <p>Since all data is stored locally on your device, you are in full control of retention. We do not maintain any servers or databases containing your personal information. You can clear all app data at any time through your device's app settings under <span class="highlight">Settings → Apps → Qibla Finder → Clear Data</span>.</p>
+  </div>
+
+  <!-- 8. SECURITY -->
+  <div class="section" id="security">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2>Data Security</h2>
+    </div>
+    <p>All sensitive operations — including prayer time calculation, Qibla bearing computation, and worship tracking — are performed entirely on your device. Since we do not collect or store your data on external servers, the risk of a data breach affecting your personal information is minimal.</p>
+    <p>Network requests made to OpenStreetMap services are conducted over secure <span class="highlight">HTTPS</span> connections. We implement appropriate technical measures to protect any data transmitted to third-party APIs.</p>
+  </div>
+
+  <!-- 9. CHILDREN -->
+  <div class="section" id="children">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Our app is suitable for users of all ages and is designed to be family-friendly. We do not knowingly collect any personal information from children under the age of 13. Since we do not collect personal information from any user, no special data handling is required for younger users. Parents and guardians are welcome to use and monitor the app freely.</p>
+  </div>
+
+  <!-- 10. GDPR -->
+  <div class="section" id="gdpr">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <h2>Your Rights Under GDPR</h2>
+    </div>
+    <p>If you are located in the European Economic Area (EEA), you have the following rights under the General Data Protection Regulation (GDPR). Since all data is stored locally on your device, you can exercise most of these rights directly by clearing app data or uninstalling the application.</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <strong>Right to Access</strong>
+        <p>Request copies of your personal data held by us</p>
+      </div>
+      <div class="right-card">
+        <strong>Right to Rectification</strong>
+        <p>Request correction of any inaccurate personal data</p>
+      </div>
+      <div class="right-card">
+        <strong>Right to Erasure</strong>
+        <p>Request deletion of your personal data</p>
+      </div>
+      <div class="right-card">
+        <strong>Right to Restrict Processing</strong>
+        <p>Request that we limit how we use your data</p>
+      </div>
+      <div class="right-card">
+        <strong>Right to Data Portability</strong>
+        <p>Request transfer of your data in a portable format</p>
+      </div>
+      <div class="right-card">
+        <strong>Right to Object</strong>
+        <p>Object to our processing of your personal data</p>
+      </div>
+    </div>
+    <p style="margin-top: 20px;">To exercise any of these rights, contact us at <a href="mailto:smartmidas2k13@gmail.com" style="color: var(--green-light);">smartmidas2k13@gmail.com</a>.</p>
+  </div>
+
+  <!-- 11. CCPA -->
+  <div class="section" id="ccpa">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <h2>California Privacy Rights (CCPA)</h2>
+    </div>
+    <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA):</p>
+    <div class="card">
+      <ul class="collect-list">
+        <li>
+          <div class="icon">📋</div>
+          <div><strong>Right to Know</strong>Request information about the categories and specific pieces of personal information we collect</div>
+        </li>
+        <li>
+          <div class="icon">🗑️</div>
+          <div><strong>Right to Delete</strong>Request deletion of your personal information</div>
+        </li>
+        <li>
+          <div class="icon">🚫</div>
+          <div><strong>Right to Opt-Out</strong>Opt-out of the sale of your personal information. We do not sell personal information.</div>
+        </li>
+        <li>
+          <div class="icon">⚖️</div>
+          <div><strong>Right to Non-Discrimination</strong>We will never discriminate against you for exercising your privacy rights</div>
+        </li>
+      </ul>
+    </div>
+    <p style="margin-top: 14px;">To exercise your rights, contact us at <a href="mailto:smartmidas2k13@gmail.com" style="color: var(--green-light);">smartmidas2k13@gmail.com</a>.</p>
+  </div>
+
+  <!-- 12. CHANGES -->
+  <div class="section" id="changes">
+    <div class="section-header">
+      <div class="section-number">12</div>
+      <h2>Changes to This Privacy Policy</h2>
+    </div>
+    <div class="notice-box">
+      <h3>Future Updates</h3>
+      <p>We may update this Privacy Policy from time to time, particularly when advertising features are introduced or new third-party services are integrated.</p>
+      <p>We will notify you of significant changes by posting the updated policy on this page and updating the "Last Updated" date at the top. For material changes — such as the introduction of advertising — we will provide an in-app notification.</p>
+      <p>You are advised to review this Privacy Policy periodically. Continued use of the app after changes constitutes your acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <!-- 13. CONTACT -->
+  <div class="section" id="contact">
+    <div class="contact-box">
+      <h2>Contact Us</h2>
+      <p>Have questions about this Privacy Policy or how your data is handled? We're happy to help.</p>
+      <a href="mailto:smartmidas2k13@gmail.com" class="contact-link">
+        ✉️ &nbsp; smartmidas2k13@gmail.com
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Qibla Finder & Prayer Companion</strong> &nbsp;·&nbsp; Developed by Veltrix &nbsp;·&nbsp; Hyderabad, India</p>
+  <p style="margin-top: 8px;">© 2026 Veltrix. All rights reserved. &nbsp;·&nbsp; Last Updated: April 26, 2026</p>
+</footer>
+
+</body>
+</html>
